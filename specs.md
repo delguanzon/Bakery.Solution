@@ -11,7 +11,7 @@
 
 #### Pastry Class Specs
 
-- [] Must take an integer for quantity of pastry
-- [] Return cost of $2 for a single pastry
-- [] Return a cost of $5 for 3 pastries
+- [x] Must take an integer for quantity of pastry
+- [x] Return cost of $2 for a single pastry
+- [] Return a cost of $5 for 3 pastries as a promo/discount
 - [] Combine cost of the pastries following the above logic

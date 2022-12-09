@@ -11,5 +11,9 @@ namespace Bakery.Models
         public Pastry(int userInput) {
             Qty = userInput;
         }
+
+        public int GetNormalPrice() {
+            return Qty * 2;
+        }
     }
 }

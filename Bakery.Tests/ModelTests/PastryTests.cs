@@ -25,11 +25,17 @@ namespace Bakery.Tests.ModelTests
       Assert.AreEqual(userInput, pastry.Qty);
     }
 
+    [TestMethod]
     public void GetNormalPrice_ReturnNormalCostOfPastryBasedOnQty_Int() {
-      int userInput = 2;
+      int userInput = 1;
       int price = 2;
       Pastry pastry = new Pastry(userInput);
       Assert.AreEqual(price, pastry.GetNormalPrice());
+      pastry.Qty = 2;
+      price = 4;
+      Assert.AreEqual(price, pastry.GetNormalPrice());
     }
+
+    
   }
 }
