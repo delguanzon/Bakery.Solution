@@ -9,7 +9,7 @@ namespace Bakery.Models
     }
 
     public int GetCost() {
-      int total = LoafQty * 5;
+      int total = (LoafQty * 5) - GetDiscount();
       return total;
     }
 
