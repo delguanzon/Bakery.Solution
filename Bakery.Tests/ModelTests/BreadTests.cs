@@ -39,5 +39,10 @@ namespace Bakery.Tests
       Assert.AreEqual(15, bread.GetDiscount());
     }
 
+    public void GetCost_ReturnCostBasedOnLoafQtyAndApplyingTheDiscount_Int() {
+      int userInput = 2;
+      Bread bread = new Bread(userInput);
+      Assert.AreEqual(10, bread.GetCost());
+    }
   }
 }
