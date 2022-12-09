@@ -30,8 +30,12 @@ namespace Bakery.Tests
 
     [TestMethod]
     public void GetDiscount_ReturnDiscountValueBasedOnLoafQty_Int() {
-      int userInput = 9;
+      int userInput = 3;
       Bread bread = new Bread(userInput);
+      Assert.AreEqual(5, bread.GetDiscount());
+      bread.LoafQty = 5;
+      Assert.AreEqual(5, bread.GetDiscount());
+      bread.LoafQty = 9;
       Assert.AreEqual(15, bread.GetDiscount());
     }
 
