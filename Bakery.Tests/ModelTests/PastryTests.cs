@@ -30,10 +30,10 @@ namespace Bakery.Tests.ModelTests
       int userInput = 1;
       int price = 2;
       Pastry pastry = new Pastry(userInput);
-      Assert.AreEqual(price, pastry.GetNormalPrice());
+      Assert.AreEqual(price, pastry.GetNormalPrice(pastry.Qty));
       pastry.Qty = 2;
       price = 4;
-      Assert.AreEqual(price, pastry.GetNormalPrice());
+      Assert.AreEqual(price, pastry.GetNormalPrice(pastry.Qty));
     }
 
     [TestMethod]
@@ -47,19 +47,18 @@ namespace Bakery.Tests.ModelTests
       Assert.AreEqual(price, pastry.GetDiscountPrice());
     }
 
+    [TestMethod]
     public void GetTotalCost_ReturnTotalCostBasedOnDiscountPriceAndNormalPrice_Int() {
-      int userInput = 4;
-      int price = 7;
+      int userInput = 2;
+      int price = 4;
       Pastry pastry = new Pastry(userInput);
-      Assert.AreEqual(price, pastry.GetDiscountPrice());
+      Assert.AreEqual(price, pastry.GetTotalCost());
       pastry.Qty = 5;
       price = 9;
-      Assert.AreEqual(price, pastry.GetDiscountPrice());
+      Assert.AreEqual(price, pastry.GetTotalCost());
       pastry.Qty = 6;
       price = 10;
-      Assert.AreEqual(price, pastry.GetDiscountPrice());
+      Assert.AreEqual(price, pastry.GetTotalCost());
     }
-
-
   }
 }
