@@ -36,6 +36,17 @@ namespace Bakery.Tests.ModelTests
       Assert.AreEqual(price, pastry.GetNormalPrice());
     }
 
-    
+    [TestMethod]
+    public void GetDiscountPrice_ReturnDiscountedCostOfPastryAtFiveInEveryThreeQty_Int() {
+      int userInput = 3;
+      int price = 5;
+      Pastry pastry = new Pastry(userInput);
+      Assert.AreEqual(price, pastry.GetDiscountPrice());
+      pastry.Qty = 6;
+      price = 10;
+      Assert.AreEqual(price, pastry.GetDiscountPrice());
+    }
+
+
   }
 }
