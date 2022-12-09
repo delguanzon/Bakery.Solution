@@ -9,17 +9,16 @@ namespace Bakery.Tests
     [TestMethod]
     public void BreadConstructor_CreateAndInstanceOfBread_Bread()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      Bread bread = new Bread();
+      Bread bread = new Bread(2);
       Assert.AreEqual(typeof(Bread), bread.GetType());
     }
 
+    [TestMethod]
     public void BreadConstructor_AssignUserInputAsLoafQuantity_Bread()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
       int userInput = 2;
-      Bread bread = new Bread(2);
-      Assert.AreEqual(userInput, Bread.LoafQty);
+      Bread bread = new Bread(userInput);
+      Assert.AreEqual(userInput, bread.LoafQty);
     }
 
   }
