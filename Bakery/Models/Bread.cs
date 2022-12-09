@@ -4,9 +4,17 @@ namespace Bakery.Models
   {
 
     public int LoafQty {get; set;}
+    
+    public Bread()
+    {
+      LoafQty = 0;
+    }
+
     public Bread(int userInput) {
       LoafQty = userInput;
     }
+
+    
 
     public int GetCost() {
       int total = (LoafQty * 5) - GetDiscount();

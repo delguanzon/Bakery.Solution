@@ -14,6 +14,13 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
+    public void BreadConstructor_CreateAndInstanceOfBreadWithoutPassingAnArgument_Bread()
+    {
+      Bread bread = new Bread();
+      Assert.AreEqual(typeof(Bread), bread.GetType());
+    }
+
+    [TestMethod]
     public void BreadConstructor_AssignUserInputAsLoafQuantity_Int()
     {
       int userInput = 2;

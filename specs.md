@@ -14,4 +14,4 @@
 - [x] Must take an integer for quantity of pastry
 - [x] Return cost of $2 for a single pastry
 - [x] Return a cost of $5 for 3 pastries as a deal/discount
-- [] Combine cost of the pastries following the above logic
+- [x] Combine cost of the pastries following the above logic

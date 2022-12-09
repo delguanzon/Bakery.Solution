@@ -8,10 +8,18 @@ namespace Bakery.Models
   public class Pastry
   {
     public int Qty { get; set; }
+
+    public Pastry()
+    {
+      Qty = 0;
+    }
+
     public Pastry(int userInput)
     {
       Qty = userInput;
     }
+
+    
 
     public int GetNormalPrice(int qty)
     {

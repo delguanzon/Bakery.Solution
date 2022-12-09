@@ -1,8 +1,8 @@
-#  Galactic Birthday Calculator
+#  Pierre's Bakery
 
 #### By Yodel Guanzon <yodelguanzon@gmail.com>
 
-#### This is an independent project to test out our skills in TDD with C# and MSTest.
+#### This is an independent project to test our skills in TDD using C# and MSTest.
 
 ## Technologies Used
 
@@ -25,7 +25,7 @@ Pierre's Bakery offers the following deals:
 * Navigate to the main project located in ../Bakery.Solution/Bakery using bash or cmd
 * Use ``` dotnet restore ``` to install/restore dependencies.
 * For Building, use ```dotnet build```
-* For running the console up, use ```dotnet run```
+* For running the console application, use ```dotnet run```
 
 ## Known Bugs
 

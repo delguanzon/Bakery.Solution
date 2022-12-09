@@ -11,14 +11,21 @@ namespace Bakery.Tests.ModelTests
   public class PastryTests
   {
     [TestMethod]
-    public void BreadConstructor_CreateAndInstanceOfBread_Bread()
+    public void PastryConstructor_CreateAndInstanceOfPastry_Pastry()
     {
       Pastry pastry = new Pastry(2);
       Assert.AreEqual(typeof(Pastry), pastry.GetType());
     }
 
     [TestMethod]
-    public void BreadConstructor_AssignUserInputAsLoafQuantity_Int()
+    public void PastryConstructor_CreateAndInstanceOfPastryWithoutPassingAnArgument_Pastry()
+    {
+      Pastry pastry = new Pastry();
+      Assert.AreEqual(typeof(Pastry), pastry.GetType());
+    }
+
+    [TestMethod]
+    public void PastryConstructor_AssignUserInputAsLoafQuantity_Int()
     {
       int userInput = 2;
       Pastry pastry = new Pastry(userInput);
