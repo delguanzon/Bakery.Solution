@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bakery.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Bakery.Tests.ModelTests
@@ -22,6 +23,13 @@ namespace Bakery.Tests.ModelTests
       int userInput = 2;
       Pastry pastry = new Pastry(userInput);
       Assert.AreEqual(userInput, pastry.Qty);
+    }
+
+    public void GetNormalPrice_ReturnNormalCostOfPastryBasedOnQty_Int() {
+      int userInput = 2;
+      int price = 2;
+      Pastry pastry = new Pastry(userInput);
+      Assert.AreEqual(price, pastry.GetNormalPrice());
     }
   }
 }
