@@ -22,10 +22,17 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
-    public void GetCost_ReturnCostBasedOnLoafQty_Ten() {
+    public void GetCost_ReturnCostBasedOnLoafQty_Int() {
       int userInput = 2;
       Bread bread = new Bread(userInput);
       Assert.AreEqual(10, bread.GetCost());
+    }
+
+    [TestMethod]
+    public void GetDiscount_ReturnDiscountValueBasedOnLoafQty_Int() {
+      int userInput = 9;
+      Bread bread = new Bread(userInput);
+      Assert.AreEqual(15, bread.GetDiscount());
     }
 
   }

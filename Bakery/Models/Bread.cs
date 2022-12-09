@@ -7,5 +7,10 @@ namespace Bakery.Models
     public Bread(int userInput) {
       LoafQty = userInput;
     }
+
+    public int GetCost() {
+      int total = LoafQty * 5;
+      return total;
+    }
   }
 }
