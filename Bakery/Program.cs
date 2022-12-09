@@ -75,6 +75,18 @@ namespace Bakery
           break;
         }
       }
+
+      Console.WriteLine("Press [1] to Update your order or any key to proceed with Checkout");
+      char option = Console.ReadKey().KeyChar;
+      switch (option) {
+        case '1': {
+          Selection();
+          break;
+        }
+        default:
+          Checkout(bread, pastry);
+          break;
+      }
     }
 
     public static void ViewCart(Bread bread, Pastry pastry) {
@@ -86,6 +98,17 @@ namespace Bakery
       Console.WriteLine("");
       Console.WriteLine("Bread:  {0}   Current Cost: ${1}", bread.LoafQty, bread.GetCost());
       Console.WriteLine("Pastry: {0}   Current Cost: ${1}", pastry.Qty, pastry.GetTotalCost());
+    }
+
+    public static void Checkout(Bread bread, Pastry pastry) {
+      Console.Clear();
+      ViewCart(bread, pastry);
+      Console.Write("Your Total is: ");
+      Console.ForegroundColor = ConsoleColor.White;
+      Console.BackgroundColor = ConsoleColor.DarkGreen;
+      Console.WriteLine("  ${0}  ", bread.GetCost() + pastry.GetTotalCost());
+      Console.ResetColor();
+      Console.WriteLine("Thank You for your Order! Have an Amazing Day!");
     }
 
   }
