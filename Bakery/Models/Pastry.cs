@@ -15,5 +15,9 @@ namespace Bakery.Models
         public int GetNormalPrice() {
             return Qty * 2;
         }
+
+        public int GetDiscountPrice() {
+            return (Qty / 3 ) * 5;
+        }
     }
 }

@@ -42,6 +42,19 @@ namespace Bakery.Tests.ModelTests
       int price = 5;
       Pastry pastry = new Pastry(userInput);
       Assert.AreEqual(price, pastry.GetDiscountPrice());
+      pastry.Qty = 7;
+      price = 10;
+      Assert.AreEqual(price, pastry.GetDiscountPrice());
+    }
+
+    public void GetTotalCost_ReturnTotalCostBasedOnDiscountPriceAndNormalPrice_Int() {
+      int userInput = 4;
+      int price = 7;
+      Pastry pastry = new Pastry(userInput);
+      Assert.AreEqual(price, pastry.GetDiscountPrice());
+      pastry.Qty = 5;
+      price = 9;
+      Assert.AreEqual(price, pastry.GetDiscountPrice());
       pastry.Qty = 6;
       price = 10;
       Assert.AreEqual(price, pastry.GetDiscountPrice());
