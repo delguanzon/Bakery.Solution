@@ -1,6 +1,6 @@
 
 #### General Specs
-[x] Have two classes, one for bread and one for pastry
+- [x] Have two classes, one for bread and one for pastry
 
 #### Bread Class Specs
 - [x] Must take an integer for quantity of bread and pastry
