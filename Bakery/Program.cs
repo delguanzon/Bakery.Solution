@@ -14,7 +14,7 @@ namespace Bakery
       Console.Clear();
       Console.ForegroundColor = ConsoleColor.Black;
       Console.BackgroundColor = ConsoleColor.DarkYellow;
-      Console.Write("Welcome to Pierre's Bakery!");
+      Console.Write(" Welcome to Pierre's Bakery! ");
       Console.ResetColor();
       Console.WriteLine("\nWe have [Bread] and [Pastry]. Which one would you like to order?");      
       Bread bread = new Bread();
@@ -26,7 +26,7 @@ namespace Bakery
     public static void Selection(Bread bread, Pastry pastry)
     {
       int userInput;
-      
+
       Console.WriteLine("\nPlease press [1] for Bread or [2] for Pastry:");
       ConsoleKeyInfo  x = Console.ReadKey();
       switch(x.KeyChar)
@@ -104,28 +104,37 @@ namespace Bakery
     }
 
     public static void ViewCart(Bread bread, Pastry pastry) {
+      
       Console.Clear();
+
+      Console.ForegroundColor = ConsoleColor.Black;
+      Console.BackgroundColor = ConsoleColor.DarkYellow;
+      Console.Write(" Welcome to Pierre's Bakery! ");
+      Console.ResetColor();
       Console.WriteLine("");
       Console.ForegroundColor = ConsoleColor.Black;
       Console.BackgroundColor = ConsoleColor.Cyan;      
       Console.Write("[Your Cart]");
       Console.ResetColor();
-      Console.WriteLine("");
-      Console.WriteLine("Bread:  {0}   Current Cost: ${1}", bread.LoafQty, bread.GetCost());
-      Console.WriteLine("Pastry: {0}   Current Cost: ${1}", pastry.Qty, pastry.GetTotalCost());
+      Console.WriteLine("------------------");
+      Console.WriteLine("    Bread:  {0}   Cost: ${1}", bread.LoafQty, bread.GetCost());
+      Console.WriteLine("    Pastry: {0}   Cost: ${1}", pastry.Qty, pastry.GetTotalCost());
+      Console.WriteLine("-----------------------------");
     }
 
     public static void Checkout(Bread bread, Pastry pastry) {
       Console.Clear();
       ViewCart(bread, pastry);
-      Console.Write("Your Total is: ");
+      Console.Write("\nYour Total is: ");
       Console.ForegroundColor = ConsoleColor.White;
       Console.BackgroundColor = ConsoleColor.DarkGreen;
       Console.WriteLine("  ${0}  ", bread.GetCost() + pastry.GetTotalCost());
       Console.ResetColor();
-      Console.WriteLine("Thank You for your Order! Have an Amazing Day!");
+      Console.WriteLine("\nThank You for your Order! Have an Amazing Day!");
       Environment.Exit(0);
     }
+
+    
 
   }
 }

@@ -17,13 +17,11 @@ namespace Bakery.Models
     
 
     public int GetCost() {
-      int total = (LoafQty * 5) - GetDiscount();
-      return total;
+      return (LoafQty * 5) - GetDiscount();;
     }
 
     public int GetDiscount() {
-      int discount = 5 * (LoafQty/3);
-      return discount;
+      return 5 * (LoafQty/3);
     }
   }
 }
