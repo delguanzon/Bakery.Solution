@@ -11,23 +11,24 @@ namespace Bakery
   {
     public static void Main()
     {
-
+      Console.Clear();
       Console.ForegroundColor = ConsoleColor.Black;
       Console.BackgroundColor = ConsoleColor.DarkYellow;
       Console.Write("Welcome to Pierre's Bakery!");
       Console.ResetColor();
-      Console.WriteLine("\n We have [Bread] and [Pastry]. Which one would you like to order?");
-      Selection();
+      Console.WriteLine("\nWe have [Bread] and [Pastry]. Which one would you like to order?");      
+      Bread bread = new Bread();
+      Pastry pastry = new Pastry();
+      Selection(bread, pastry);
 
     }
 
-    public static void Selection()
+    public static void Selection(Bread bread, Pastry pastry)
     {
-      Console.WriteLine("Plese press [1] for Bread or [2] for Pastry:");
+      int userInput;
+      
+      Console.WriteLine("\nPlease press [1] for Bread or [2] for Pastry:");
       ConsoleKeyInfo  x = Console.ReadKey();
-      Bread bread = new Bread();
-      Pastry pastry = new Pastry();
-
       switch(x.KeyChar)
       {
         case '1': 
@@ -36,8 +37,15 @@ namespace Bakery
           ViewCart(bread, pastry);
           Console.WriteLine();
           Console.WriteLine("How many loaves of bread would you like to order?");
-          int userInput = int.Parse(Console.ReadLine());
-          if(userInput != 0) {
+          
+
+          while(!int.TryParse(Console.ReadLine(), out userInput))
+          {
+            Console.WriteLine("Please enter a valid number");
+            Console.WriteLine("How many loaves of bread would you like to order?");
+          }
+
+          if(userInput > 0) {
             bread.LoafQty = userInput;
             Console.Clear(); 
             Console.WriteLine("That will be ${0} for {1} {2} of bread.", bread.GetCost(), bread.LoafQty, bread.LoafQty > 1 ? "loaves":"loaf");
@@ -55,10 +63,16 @@ namespace Bakery
           ViewCart(bread, pastry);
           Console.WriteLine();
           Console.WriteLine("How many pastries would you like to order?");
-          int userInput = int.Parse(Console.ReadLine());
-          if(userInput != 0) {
+          while(!int.TryParse(Console.ReadLine(), out userInput))
+          {
+            Console.WriteLine("Please enter a valid number");
+            Console.WriteLine("How many pastries would you like to order?");
+          }
+          if(userInput > 0) {
             pastry.Qty = userInput;
+            Console.Clear(); 
             Console.WriteLine("That will be ${0} for {1} {2}.", pastry.GetTotalCost(), pastry.Qty, pastry.Qty > 1 ? "pastries":"pastry");
+            ViewCart(bread, pastry);
           }
           else {
             Console.WriteLine("Cancelling Order.");
@@ -71,7 +85,7 @@ namespace Bakery
           Console.Clear();
           ViewCart(bread, pastry);
           Console.WriteLine("You have entered an invalid selection.");
-          Selection();
+          Selection(bread,pastry);
           break;
         }
       }
@@ -80,7 +94,7 @@ namespace Bakery
       char option = Console.ReadKey().KeyChar;
       switch (option) {
         case '1': {
-          Selection();
+          Selection(bread,pastry);
           break;
         }
         default:
@@ -90,6 +104,7 @@ namespace Bakery
     }
 
     public static void ViewCart(Bread bread, Pastry pastry) {
+      Console.Clear();
       Console.WriteLine("");
       Console.ForegroundColor = ConsoleColor.Black;
       Console.BackgroundColor = ConsoleColor.Cyan;      
@@ -109,6 +124,7 @@ namespace Bakery
       Console.WriteLine("  ${0}  ", bread.GetCost() + pastry.GetTotalCost());
       Console.ResetColor();
       Console.WriteLine("Thank You for your Order! Have an Amazing Day!");
+      Environment.Exit(0);
     }
 
   }
