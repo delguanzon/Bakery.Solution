@@ -26,6 +26,7 @@ Pierre's Bakery offers the following deals:
 * Use ``` dotnet restore ``` to install/restore dependencies.
 * For Building, use ```dotnet build```
 * For running the console application, use ```dotnet run```
+* For Testing, navigate to ../Bakery.Solution/Bakery.Tests and use ```dotnet test```.
 
 ## Known Bugs
 
